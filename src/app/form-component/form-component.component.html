@@ -1,0 +1,30 @@
+<div class="container">
+   <h1>Hero Form</h1>
+   <form #heroForm="ngForm">
+      <div ngModelGroup="passwordGroup" appConfirmEqualValidator #passwordGroup="ngModelGroup" [class.has-error]="passwordGroup.errors?.notEqual && passwordGroup.errors?.required">
+         <div class="form-group" [class.has-error]="password.touched && password.invalid">
+            <label for="pass" class="control-label">Password </label>
+            <input  type="text" class="form-control" id="pass" 
+                    name="password" required
+                    ngModel #password="ngModel">
+            <span *ngIf="password.touched && password.errors?.required" class="alert alert-danger">
+               password is required
+            </span>
+         </div>
+         <div class="form-group" [class.has-error]="confirmPassword.touched && confirmPassword.invalid">
+            <label for="cpass" class="control-label">Confirm Password </label>
+            <input type="text" class="form-control" id="cpass" 
+                    name="confirmPassword" required 
+                    ngModel #confirmPassword="ngModel">
+            <span *ngIf="confirmPassword.touched && confirmPassword.errors?.required" class="alert alert-danger">
+               confirmPassword is required
+            </span>
+            <span *ngIf="confirmPassword.touched && passwordGroup.errors?.notEqual && !confirmPassword.errors?.required" class="alert alert-danger">
+               password and confirm password not match
+            </span>
+         </div>
+      </div>
+      <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
+   </form>
+   {{heroForm.value | json}}
+</div>

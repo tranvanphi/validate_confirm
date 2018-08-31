@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="card">
+      <button (click)="setCurrentView('list')" [ngClass]="{'active':currentView === 'list'}" class="view">LIST</button>
+      <button (click)="setCurrentView('grid')" [ngClass]="{'active':currentView === 'grid'}"  class="view">GRID</button>
+
+      <button class="filter" [ngClass]="{'active':typeCountries === '0'}" (click)="getCountriesType('0');">type0</button>
+      <button class="filter" [ngClass]="{'active':typeCountries === '1'}" (click)="getCountriesType('1');">type1</button>
+      <button class="filter" [ngClass]="{'active':typeCountries === 'all'}" (click)="getCountriesType('all');">Tat ca</button>
+    <div class="card-body">
+      <div class="card-title">
+        Country
+      </div>
+      
+      <div class="wrap-content" [ngSwitch]="currentView">
+        <div *ngSwitchCase="'list'">
+          <app-list-view [countries]="countries" class="list-view"></app-list-view>
+        </div>
+        <div *ngSwitchCase="'grid'">
+          <app-grid-view [countries]="countries" class="grid-view"></app-grid-view>
+        </div>
+      </div> 
+    </div>
+
+    <nav aria-label="navigation">
+        <ul class="pagination">
+          <li *ngFor="let pages of totalPages; let i=index" class="page-item">
+            <a class="page-link" href=""  (click)="setPage(i, $event)" [ngClass]="{'active':i==page}">{{i+1}}</a>
+          </li>
+
+        </ul>
+      </nav>
+  </div>
+</div>

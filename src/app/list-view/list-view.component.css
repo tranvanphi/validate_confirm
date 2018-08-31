@@ -1,0 +1,17 @@
+
+.list{
+    background-color:papayawhip;
+    margin:10px 0px;
+    width: 100%;
+}
+
+.list .aaa{
+    color: blue;
+}
+
+.list .bbb{
+    color:red;
+}
+.list .ccc{
+    border: 1px solid green;
+}

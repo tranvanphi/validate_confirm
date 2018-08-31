@@ -1,0 +1,43 @@
+.card-title{
+    font-size: 20px;
+    color:red;
+}
+
+.list-view {
+    width: 100%;
+}
+
+.grid-view{
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+}
+
+.page-link.active{
+    background-color: #106dc7;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+}
+.filter,
+.view{
+    background-color: #d9d9e0;
+    border: 1px solid #c3c3c3;
+    color: #2d2d2d;
+    font-weight: 600;
+    padding: 6px 20px;
+    border-radius: 5px;
+    text-transform: capitalize;
+}
+
+.filter.active,
+.view.active{
+    background-color:blue;
+    color:white;
+}

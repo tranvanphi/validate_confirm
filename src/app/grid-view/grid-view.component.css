@@ -1,0 +1,20 @@
+.grid{
+    width:45%;
+    padding: 10px;
+    margin:10px;
+    background-color: rgb(71, 170, 145);
+    font-style: italic;
+    font-weight: bold;
+    border:5px solid #000;
+}
+
+.grid .aaa{
+    color: blue;
+}
+
+.grid .bbb{
+    color: rgb(233, 54, 10);
+}
+.grid .ccc{
+    border: 1px solid rgb(88, 72, 77);
+}
